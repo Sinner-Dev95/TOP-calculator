@@ -82,49 +82,132 @@ body {
   justify-content: center;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background-color: steelblue;
 }
 
 #TITOLO {
   text-align: center;
 }
 
-.calcolatrice-container{
-  
+.calcolatrice-container {
+  padding: 1rem;
+  border: 2px solid #000;
+  border-radius: 1rem;
   width: min(400px, 90vw); // max 400px, ma mai più del 90% dello schermo
   aspect-ratio: 3/4; // mantiene proporzioni fisse
   display: grid;
   gap: 10px 10px;
-  grid-template-areas: 
+  grid-template-areas:
     "display display display display"
     "reset clear modulo divisione"
     "sette otto nove moltiplicazione"
     "quattro cinque sei meno"
     "uno due tre piu"
     "zero zero decimale uguale";
+  background-color: rgb(252, 253, 221);
 }
 
 .display {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  padding-right: 1rem;
+  border-radius: 1rem;
   grid-area: display;
-    
+  place-items: center;
+  color: #fff;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
 
-[data-grid ="reset"]{grid-area: reset;}
-[data-grid ="clear"]{grid-area: clear;}
-[data-grid ="modulo"]{grid-area: modulo;}
-[data-grid ="divisione"]{grid-area: divisione;}
-[data-grid ="sette"]{grid-area: sette;}
-[data-grid ="otto"]{grid-area: otto;}
-[data-grid ="nove"]{grid-area: nove;}
-[data-grid ="moltiplicazione"]{grid-area: moltiplicazione;}
-[data-grid ="quattro"]{grid-area: quattro;}
-[data-grid ="cinque"]{grid-area: cinque;}
-[data-grid ="sei"]{grid-area: sei;}
-[data-grid ="meno"]{grid-area: meno;}
-[data-grid ="uno"]{grid-area: uno;}
-[data-grid ="due"]{grid-area: due;}
-[data-grid ="tre"]{grid-area: tre;}
-[data-grid ="piu"]{grid-area: piu;}
-[data-grid ="zero"]{grid-area: zero;}
-[data-grid ="decimale"]{grid-area: decimale;}
-[data-grid ="uguale"]{grid-area: uguale;}
+button {
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 18px;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
 
+button:hover{
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+button:active{
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+[data-type="numero"]{
+  color: #000;
+}
+
+[data-grid="reset"] {
+  grid-area: reset;
+
+  background-color: rgb(219, 69, 61);
+}
+[data-grid="clear"] {
+  grid-area: clear;
+
+  background-color: rgb(219, 163, 61);
+}
+[data-grid="modulo"] {
+  grid-area: modulo;
+  background-color: rgb(219, 163, 61);
+}
+[data-grid="divisione"] {
+  grid-area: divisione;
+  background-color: rgb(87, 155, 58);
+}
+[data-grid="sette"] {
+  grid-area: sette;
+}
+[data-grid="otto"] {
+  grid-area: otto;
+}
+[data-grid="nove"] {
+  grid-area: nove;
+}
+[data-grid="moltiplicazione"] {
+  grid-area: moltiplicazione;
+  background-color: rgb(87, 155, 58);
+}
+[data-grid="quattro"] {
+  grid-area: quattro;
+}
+[data-grid="cinque"] {
+  grid-area: cinque;
+}
+[data-grid="sei"] {
+  grid-area: sei;
+}
+[data-grid="meno"] {
+  grid-area: meno;
+  background-color: rgb(87, 155, 58);
+}
+[data-grid="uno"] {
+  grid-area: uno;
+}
+[data-grid="due"] {
+  grid-area: due;
+}
+[data-grid="tre"] {
+  grid-area: tre;
+}
+[data-grid="piu"] {
+  grid-area: piu;
+  background-color: rgb(87, 155, 58);
+}
+[data-grid="zero"] {
+  grid-area: zero;
+}
+[data-grid="decimale"] {
+  grid-area: decimale;
+  background-color: rgb(219, 163, 61);
+}
+[data-grid="uguale"] {
+  grid-area: uguale;
+  background-color: rgb(219, 163, 61);
+}
