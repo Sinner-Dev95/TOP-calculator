@@ -85,4 +85,17 @@ body {
 
 .calcolatrice-container {
   display: grid;
+}
+
+.display {
+  grid-area: display;
+  grid-template-areas: "display display display display" "ac clear percent divide" "seven eight nine multiply" "four five six subtract" "one two three add" "zero zero decimal equal";
+}
+
+button[data-type=reset] {
+  grid-area: ac;
+}
+
+button[data-type=clear] {
+  grid-area: c;
 }/*# sourceMappingURL=styles.css.map */
