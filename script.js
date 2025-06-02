@@ -3,3 +3,47 @@ console.log('Hello World!');
 const calcolatrice = document.querySelector('.calcolatrice-container');
 const display = document.querySelector('.display');
 const buttons = document.querySelectorAll('button');
+/*
+console.log(calcolatrice);
+console.log(display);
+console.log(buttons); // Dovrebbe mostrarti una NodeList con tutti i bottoni
+console.log(buttons.length); // Quanti bottoni ha trovato?*/
+
+
+//funzioni tasti not number
+ const somma = (a,b) => a + b;
+ const sottrazione = (a,b) => a - b;
+ const moltiplicazione = (a,b) => a * b;
+ const divisione = (a,b) => a / b;
+ const modulo = (a,b) => a % b;
+
+ //funzione che svolge operazioni
+function operazione (operatore, a ,b){
+    switch(operatore){
+        case '+':
+            return somma(a,b);
+
+        case '-':
+            return sottrazione(a,b);
+        case '*':
+            return moltiplicazione(a,b);
+        case '/':
+            return divisione(a,b);
+        case '%':
+            return modulo(a,b);
+        default : alert('Devi selezionare un operatore! riprova!');
+        return 0;
+    }
+}
+
+/*
+console.log(operazione("+", 5, 3)); // dovrebbe dare 8
+console.log(operazione("*", 4, 2)); // dovrebbe dare 8  
+console.log(operazione("@", 1, 1)); // dovrebbe dare alert + 0*/
+
+
+//test event delegation 
+
+calcolatrice.addEventListener('click', function(event) {
+    console.log(event.target);
+});
