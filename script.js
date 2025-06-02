@@ -42,8 +42,28 @@ console.log(operazione("*", 4, 2)); // dovrebbe dare 8
 console.log(operazione("@", 1, 1)); // dovrebbe dare alert + 0*/
 
 
-//test event delegation 
+let numeroUno = 0; //primo numero da salvare nel display
+let numeroDue = 0; //secondo numero da salvare nel display
+let operatore= ''; //operatore 
+let concatena = false; //flag on off per dire se concatenare o no numeri 
 
+//test event delegation 
 calcolatrice.addEventListener('click', function(event) {
     console.log(event.target);
+    const tipoBottone = event.target.dataset.type; //salva il data type del bottone per capire se numero o operatore
+
+     if (concatena) {
+        // Aggiungi al display esistente
+        display.textContent = display.textContent + event.target.textContent;
+    } else {
+        // Sostituisci il display  
+        display.textContent = event.target.textContent;
+        concatena = true;
+    };
+    /*else if (tipoBottone === 'operatore'){
+
+    };
+    else if (tipoBottone === 'uguale'){
+
+    };*/
 });
