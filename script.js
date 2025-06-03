@@ -83,6 +83,13 @@ calcolatrice.addEventListener("click", function (event) {
         display.textContent = "0";
     }
 }
+
+else if (tipoBottone === "decimale") {
+    // Se non c'è già un punto, aggiungilo
+    if (!display.textContent.includes(".")) {
+        display.textContent = display.textContent + ".";
+    }
+}
   
   else if (tipoBottone === "operatore") {
     numeroUno = Number(display.textContent); //salva numero del display
